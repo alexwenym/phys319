@@ -1,0 +1,51 @@
+
+naken430asm - MSP430 Assembler / Disassembler / Simulator
+
+Michael Kohn
+mike@mikekohn.net
+http://www.mikekohn.net/
+
+-------  naken430asm -------------------------------------------
+
+Assembler macros:
+
+.define or #define    - macro definitions
+.ifdef or #ifdef      - checks for macro defines
+.else or #else
+.endif or #endif
+equ
+
+Setting the origin address:
+
+.org 0xfffe           - assembly of next lines of code start at address 0xfffe
+
+Including files:
+
+.include "msp430g2x31.inc"  - to include msp430g2x31.inc.  #include works too
+
+Assembler number constants:
+
+031 or 31q   for octal number 31
+1001b        for binary number 1001
+0x24 or 24h  for hex number 24
+
+Comments:
+
+//      for single line comments
+;       for simple line comments
+/*  */  for multi-line comments
+
+Data bytes directives (need to be padded to 2 bytes):
+
+db "Copyright 2010 by Michael Kohn", 0, 5, -9
+dw 100, 2000, 400, 9
+ds8  40                    ; allocate 40 bytes of 0's
+ds16 40                    ; allocate 40 words (80 bytes) of 0's
+.ascii "something"         ; not null terminated (same as db)
+.asciiz "something"        ; null terminated string
+
+-------  naken430util -------------------------------------------
+:x
+
+
+

@@ -1,0 +1,13 @@
+
+.org 0x0300
+
+start:
+  mov.w #0x0200, SP
+  mov.w #0x0c00, &0x0206
+  cmp.b #0x0c, 0x0207
+  jeq start
+
+.org 0xfffe
+
+  dw start
+
